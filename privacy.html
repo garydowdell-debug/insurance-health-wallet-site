@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Insurance Health Wallet</title>
+<meta name="description" content="What the Insurance Health Wallet stores, where it goes, and how to delete it." />
+<style>
+  :root { --bg:#F4F7F4; --card:#fff; --ink:#1D3531; --muted:#5C6E68;
+          --green:#1F6353; --line:#d7e0db; }
+  * { box-sizing: border-box; }
+  body { font-family:-apple-system, system-ui, "Segoe UI", sans-serif;
+         line-height:1.6; color:var(--ink); background:var(--bg);
+         margin:0; padding:28px 20px 60px; font-size:18px; }
+  main { max-width:720px; margin:0 auto; }
+  h1 { font-size:30px; margin:10px 0 4px; }
+  h2 { font-size:22px; margin:32px 0 8px; }
+  h3 { font-size:18px; margin:20px 0 4px; }
+  .sub { color:var(--muted); margin-bottom:6px; }
+  .card { background:var(--card); border:1px solid var(--line);
+          border-radius:14px; padding:16px 18px; margin:16px 0; }
+  .key { background:#EAF3EF; border-color:#BBD6CB; }
+  ul { padding-left:22px; }
+  li { margin:6px 0; }
+  a { color:var(--green); }
+  code { background:#eef3ef; padding:1px 6px; border-radius:4px; font-size:.9em; }
+  .top { font-size:34px; }
+  footer { margin-top:40px; color:var(--muted); font-size:15px;
+           border-top:1px solid var(--line); padding-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">🩺</div>
+  <h1>Privacy Policy</h1>
+  <div class="sub">Insurance Health Wallet</div>
+  <div class="sub"><b>Last updated:</b> REPLACE_WITH_DATE</div>
+
+  <p>This app holds medical and insurance information, which is about as private
+     as information gets. This page explains, in plain language, what is stored,
+     where it goes, and how to get rid of it. No legal jargon, because you should
+     not need a lawyer to understand what happens to your own medical records.</p>
+
+  <div class="card key">
+    <b>The short version.</b>
+    <ul>
+      <li>Your information is stored in your own private account. Nobody else can see it unless you invite them.</li>
+      <li>Nothing is ever sold, rented, or used for advertising. There are no ads and no tracking in this app.</li>
+      <li>When you photograph a card, bill, or medicine label to be read automatically, that image is sent to an AI service to be read. Details below.</li>
+      <li>You can delete everything, permanently, at any time.</li>
+    </ul>
+  </div>
+
+  <h2>What is stored</h2>
+  <p>Only what you type in or upload:</p>
+  <ul>
+    <li><b>Your email address</b>, used to sign in.</li>
+    <li><b>Family member details</b> — names, dates of birth, and notes you add.</li>
+    <li><b>Health information</b> — medicines, doses, schedules, appointments, doctors, visit notes, conditions and allergies.</li>
+    <li><b>Insurance and money</b> — plan and card details, coverage notes, bills and statements you record.</li>
+    <li><b>Files you upload</b> — photographs and PDFs of insurance cards, benefit booklets, medication sheets, bills and Explanations of Benefits.</li>
+    <li><b>Reminder settings</b> — if you turn on reminders, the app stores an address for your device, your time zone, and any quiet hours.</li>
+  </ul>
+  <p>The app does <b>not</b> collect your location, your contacts, your browsing,
+     or any advertising identifier. There is no analytics service, no tracking
+     pixel, and no third-party advertising code anywhere in it.</p>
+
+  <h2>Where it is stored</h2>
+  <p>Your information is held in a private database and private file storage
+     operated by <b>Supabase</b>, on servers in the United States. It is protected
+     by security rules that tie every record to your account, and it travels over
+     an encrypted connection. The website itself is delivered by <b>Vercel</b>.</p>
+  <p>Uploaded files are kept in a private storage area. They are not publicly
+     reachable: viewing one produces a temporary link that expires after about
+     thirty minutes.</p>
+
+  <h2>Reading documents automatically</h2>
+  <div class="card">
+    <p style="margin-top:0"><b>This is the most important thing on this page.</b></p>
+    <p>Several features can read a document for you — an insurance card, a
+       benefits booklet, a medication sheet, or a medical bill. When you use one
+       of these, <b>the image or PDF you chose is sent over an encrypted
+       connection to Anthropic's Claude API</b>, which reads the text and sends
+       back a structured result. There is no way to do this on the phone alone.</p>
+    <p>What this means in practice:</p>
+    <ul>
+      <li>It only happens when you actively choose to have a document read. Nothing is sent in the background, and files you simply store are never sent anywhere.</li>
+      <li>Under Anthropic's commercial API terms, material sent this way is <b>not used to train their models</b>, and is deleted from their systems within thirty days. Content flagged for safety review may be kept longer. Their current terms are published at <a href="https://www.anthropic.com/legal/commercial-terms">anthropic.com/legal/commercial-terms</a>.</li>
+      <li>If you would rather no document ever leave your phone, do not use the automatic reading features. You can type the same information in by hand, and everything else in the app works normally.</li>
+    </ul>
+  </div>
+
+  <h2>Reminders</h2>
+  <p>If you turn on reminders, notifications are delivered through the push
+     service belonging to your phone's maker — Apple for iPhone and iPad, Google
+     for Android. To do that, the app stores a delivery address for your device.
+     A reminder contains the person's name, the medicine or appointment, and the
+     time. Those services handle the delivery and can see the message content in
+     transit, so they behave like any other notification on your phone.</p>
+  <p>You can turn reminders off at any time in Settings, which removes the stored
+     address for that device.</p>
+
+  <h2>Who else can see your information</h2>
+  <p>Nobody, unless you choose it. If you share an invitation code with a family
+     member, they can see and edit everything in that shared wallet. Give a code
+     only to someone you intend to have full access. Everyone with access can add,
+     change, and remove information.</p>
+  <p>Your information is never sold, rented, traded, or handed to advertisers,
+     data brokers, insurers, or employers. It may be disclosed only if the law
+     requires it, such as a valid court order.</p>
+
+  <h2>Other services the app relies on</h2>
+  <p>Loading the app contacts a few technical services, which necessarily see the
+     internet address your phone is connecting from. They receive no health
+     information:</p>
+  <ul>
+    <li><b>Cloudflare CDN</b> and <b>jsDelivr</b> — deliver the software libraries the app is built from.</li>
+    <li><b>Google Fonts</b> — delivers the typeface.</li>
+  </ul>
+
+  <h2>Deleting your information</h2>
+  <p>You can delete individual items — a medicine, an appointment, an uploaded
+     file — at any time, and they are removed permanently.</p>
+  <p>To delete your entire account and everything in it, email
+     <b>REPLACE_WITH_EMAIL</b> from the address you signed up with, and ask for
+     your account to be deleted. Everything is erased within thirty days:
+     the account, the stored records, the uploaded files, and any reminder
+     settings. Deletion is permanent and cannot be reversed, so export a backup
+     first if you want to keep a copy.</p>
+
+  <h2>How long it is kept</h2>
+  <p>Your information is kept for as long as you keep your account, because that
+     is the point of a wallet — the records are still there when you need them
+     next year. It is erased when you ask for the account to be deleted.</p>
+
+  <h2>Children</h2>
+  <p>The app is meant for adults managing their own or their family's health
+     information, and an adult may of course record details about their child.
+     Accounts are not intended for children to create or use on their own.</p>
+
+  <h2>Security, honestly stated</h2>
+  <p>Information travels encrypted, is stored in a private database with
+     per-account access rules, and uploaded files are not publicly reachable.
+     But no system is perfectly secure, and it would be wrong to promise
+     otherwise. Use a strong, unique password, and do not share your sign-in
+     details with anyone you would not want reading your medical records.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If what the app does with your information changes, this page will be updated
+     and the date at the top will change with it.</p>
+
+  <h2>Contact</h2>
+  <p>Questions, or a request to delete your account: <b>REPLACE_WITH_EMAIL</b></p>
+
+  <footer>
+    Insurance Health Wallet · This policy describes the app at the date shown above.
+  </footer>
+</main>
+</body>
+</html>

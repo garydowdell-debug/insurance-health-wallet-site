@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Insurance Health Wallet — your family's health paperwork, in one place</title>
+<meta name="description" content="Insurance cards, medicines, appointments and medical bills for your whole family, on your phone, in plain language. English and Spanish." />
+<meta property="og:title" content="Insurance Health Wallet" />
+<meta property="og:description" content="Your family's insurance cards, medicines, appointments and medical bills in one place — in plain language, in English or Spanish." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#1F6353" />
+<link rel="icon" href="/icons/icon-192.png" />
+
+<!-- Same two faces the app uses. Atkinson Hyperlegible was designed for low
+     vision, which is the point rather than a stylistic flourish: the people
+     most likely to need this app are the most likely to struggle with type. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#F4F7F4; --card:#FFFFFF; --ink:#1D3531; --muted:#5C6E68;
+    --green:#1F6353; --green-deep:#164A3E; --green-soft:#DDEDE5;
+    --amber:#B26A0E; --amber-soft:#FBEFDA; --line:#D9E4DD;
+    --plum:#6E3C58; --blue:#33517E; --rust:#8A5A1F;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Atkinson Hyperlegible', system-ui, sans-serif;
+    font-size:18px; line-height:1.6; -webkit-text-size-adjust:100%;
+  }
+  h1,h2,h3{font-family:'Fraunces', Georgia, serif; font-weight:650; line-height:1.15; margin:0}
+  a{color:var(--green)}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 22px}
+  .narrow{max-width:760px}
+
+  /* ── Header ── */
+  header{padding:22px 0}
+  .brand{display:flex; align-items:center; gap:12px; font-weight:700; font-size:1.12em}
+  .brand .mark{font-size:1.5em}
+
+  /* ── Hero ── */
+  .hero{padding:34px 0 54px}
+  .hero h1{font-size:clamp(2.1rem, 6vw, 3.6rem); letter-spacing:-.015em}
+  .hero .lede{font-size:clamp(1.05rem,2.4vw,1.3rem); color:var(--muted); margin:18px 0 0; max-width:38ch}
+  .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:30px}
+  .btn{
+    display:inline-block; font-weight:700; font-size:1.05rem; text-decoration:none;
+    padding:15px 26px; border-radius:12px; border:2px solid transparent; min-height:52px;
+  }
+  .btn-primary{background:var(--green); color:#fff}
+  .btn-primary:hover{background:var(--green-deep)}
+  .btn-ghost{background:var(--card); color:var(--ink); border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--green); color:var(--green)}
+  .note{color:var(--muted); font-size:.95rem; margin-top:14px}
+
+  /* ── The card motif ──
+     A rounded rectangle with a stripe along the top edge, echoing the badge
+     used inside the app. It reads as an insurance card without needing a
+     literal photograph of one. */
+  .cardbadge{
+    width:64px; height:46px; border-radius:11px; background:#fff;
+    border:2px solid currentColor; position:relative; flex:none;
+    display:flex; align-items:center; justify-content:center; font-size:1.5rem;
+    box-shadow:0 2px 6px rgba(0,0,0,.07);
+  }
+  .cardbadge::before{
+    content:""; position:absolute; top:4px; left:8px; right:8px; height:3px;
+    border-radius:2px; background:currentColor; opacity:.35;
+  }
+
+  /* ── Sections ── */
+  section{padding:52px 0}
+  .band{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(1.6rem,3.6vw,2.3rem); margin-bottom:10px}
+  .sub{color:var(--muted); max-width:56ch; margin:0 0 26px}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:22px}
+  .feature{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:22px; display:flex; gap:16px; align-items:flex-start;
+  }
+  .band .feature{background:var(--bg)}
+  .feature h3{font-size:1.16rem; margin-bottom:5px}
+  .feature p{margin:0; color:var(--muted); font-size:.97rem}
+
+  /* ── Problem statement ── */
+  .quote{
+    border-left:5px solid var(--amber); background:var(--amber-soft);
+    padding:22px 24px; border-radius:0 14px 14px 0; font-size:1.12rem;
+  }
+  .quote p{margin:0}
+  .quote p + p{margin-top:12px}
+
+  /* ── Privacy ── */
+  .privacy{background:var(--green-soft); border-radius:18px; padding:28px}
+  .privacy ul{margin:14px 0 0; padding-left:22px}
+  .privacy li{margin:8px 0}
+
+  /* ── Tester call ── */
+  .tester{
+    background:var(--green); color:#fff; border-radius:20px; padding:34px 30px;
+  }
+  .tester h2{color:#fff}
+  .tester p{color:#DDEDE5; max-width:52ch}
+  .tester .btn-primary{background:#fff; color:var(--green)}
+  .tester .btn-primary:hover{background:var(--green-soft)}
+  .tester .btn-ghost{background:transparent; color:#fff; border-color:rgba(255,255,255,.5)}
+  .tester .btn-ghost:hover{border-color:#fff; color:#fff}
+
+  /* ── Bilingual ── */
+  .langs{display:flex; gap:14px; flex-wrap:wrap; margin-top:18px}
+  .langcard{
+    flex:1 1 260px; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:18px 20px;
+  }
+  .langcard .tag{
+    display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--green); margin-bottom:6px;
+  }
+
+  footer{padding:38px 0 46px; color:var(--muted); font-size:.93rem}
+  footer a{color:var(--muted)}
+  .footrow{display:flex; gap:18px; flex-wrap:wrap; justify-content:space-between; align-items:center}
+
+  @media (max-width:560px){
+    body{font-size:17px}
+    section{padding:40px 0}
+    .tester{padding:26px 20px}
+  }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="mark" aria-hidden="true">🩺</span> Insurance Health Wallet</div>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <h1>Your family's health paperwork,<br>finally in one place.</h1>
+  <p class="lede">Insurance cards, medicines, appointments and medical bills — on your
+     phone, explained in plain language. In English or Spanish.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#testers">Help test it</a>
+    <a class="btn btn-ghost" href="/">Open the app</a>
+  </div>
+  <p class="note">Free while in testing. Works on any phone, no app store required.</p>
+</div>
+
+<section class="band">
+  <div class="wrap narrow">
+    <div class="quote">
+      <p><strong>Anyone who has helped a parent through a health problem knows the folder.</strong></p>
+      <p>Insurance cards, pill bottles, appointment reminders, and a stack of bills nobody
+         can read. The information all exists. It is just never in one place, and never in
+         plain language at the moment you actually need it — standing at a pharmacy counter,
+         or sitting in a waiting room filling in the same form for the fourth time.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="sub">Six things, each aimed at a moment where the paperwork usually wins.</p>
+    <div class="grid">
+
+      <div class="feature">
+        <span class="cardbadge" style="color:var(--plum)" aria-hidden="true">🪪</span>
+        <div>
+          <h3>Reads your insurance card</h3>
+          <p>Photograph a card or a benefits booklet and it pulls out the copays,
+             deductibles and coverage limits — then explains what they mean.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="cardbadge" style="color:var(--green)" aria-hidden="true">💊</span>
+        <div>
+          <h3>Medicine reminders that follow up</h3>
+          <p>A reminder before the dose, at the dose, and afterwards if it still
+             is not marked as taken. Medicines you take only when you need them stay quiet.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="cardbadge" style="color:var(--blue)" aria-hidden="true">🗓️</span>
+        <div>
+          <h3>Appointments and the questions you meant to ask</h3>
+          <p>What is coming up, what you wanted to ask, and what the doctor asked
+             you to do next — so it does not get lost on the drive home.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="cardbadge" style="color:var(--rust)" aria-hidden="true">🧾</span>
+        <div>
+          <h3>Checks your medical bills</h3>
+          <p>Add an Explanation of Benefits and it compares every charge against the
+             visits you logged. A bill for something that never happened stands out.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="cardbadge" style="color:var(--amber)" aria-hidden="true">🚨</span>
+        <div>
+          <h3>One page for an emergency</h3>
+          <p>Medicines, allergies, conditions, insurance and who to call — printable,
+             for hospital staff or whoever is helping that day.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="cardbadge" style="color:var(--muted)" aria-hidden="true">👨‍👩‍👧</span>
+        <div>
+          <h3>Built for a whole family</h3>
+          <p>Track a spouse, a parent, a child — or someone you simply help out.
+             Share one wallet so nobody is guessing about anyone else's care.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Works entirely in Spanish</h2>
+    <p class="sub">Not a machine-translated afterthought. Every screen, every button and
+       every reminder notification.</p>
+    <div class="langs">
+      <div class="langcard">
+        <span class="tag">English</span>
+        <div><strong>Time for your medicine</strong></div>
+        <div style="color:var(--muted)">Gary: Lisinopril — 10 mg</div>
+      </div>
+      <div class="langcard">
+        <span class="tag">Español</span>
+        <div><strong>Hora de su medicina</strong></div>
+        <div style="color:var(--muted)">Gary: Lisinopril — 10 mg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="privacy">
+      <h2>About your privacy</h2>
+      <p style="margin:10px 0 0">This app holds medical information, which is about as
+         private as information gets. So, plainly:</p>
+      <ul>
+        <li>Your information is yours. Nobody else sees it unless you invite them.</li>
+        <li>Nothing is ever sold, rented, or used for advertising. There are no ads and no tracking.</li>
+        <li>You can delete everything, permanently, whenever you want.</li>
+        <li>When you ask it to read a document, that document is sent to an AI service to be read — and nothing is sent unless you ask.</li>
+      </ul>
+      <p style="margin-top:16px"><a href="/privacy.html">Read the full privacy policy →</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="testers">
+  <div class="wrap">
+    <div class="tester">
+      <h2>Would you help test it?</h2>
+      <p>The app is going through Google Play's closed testing, which needs twelve
+         people using it for fourteen days before it can go live. If you have an Android
+         phone and ten minutes, you would be genuinely helping.</p>
+      <p>Nothing to pay, now or ever, and you can stop whenever you like.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:REPLACE_WITH_EMAIL?subject=I%20can%20help%20test%20Insurance%20Health%20Wallet">Count me in</a>
+        <a class="btn btn-ghost" href="/">Try it in your browser first</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footrow">
+    <div>🩺 Insurance Health Wallet</div>
+    <div>
+      <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="/">Open the app</a> &nbsp;·&nbsp;
+      <a href="mailto:REPLACE_WITH_EMAIL">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
